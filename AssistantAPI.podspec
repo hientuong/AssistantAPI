@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/cong nguyen/AssistantAPI'
+  s.homepage         = 'https://github.com/congnq/AssistantAPI'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'cong nguyen' => 'congnq.hp@gmail.com' }
   s.source           = { :git => 'https://github.com/cong nguyen/AssistantAPI.git', :tag => s.version.to_s }
