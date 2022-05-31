@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'AssistantAPI_Example' do
+  pod 'AssistantAPI', :path => '../'
+
+  target 'AssistantAPI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
