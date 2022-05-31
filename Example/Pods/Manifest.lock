@@ -1,0 +1,16 @@
+PODS:
+  - AssistantAPI (0.1.0)
+
+DEPENDENCIES:
+  - AssistantAPI (from `../`)
+
+EXTERNAL SOURCES:
+  AssistantAPI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AssistantAPI: 07631b210af2875a9cefa2bb5a07ca2383564df2
+
+PODFILE CHECKSUM: ab56e103a66115559c20c89bd71280c231650bdd
+
+COCOAPODS: 1.11.2
