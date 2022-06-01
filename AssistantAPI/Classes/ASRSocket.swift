@@ -7,7 +7,6 @@
 
 import Foundation
 
-
-struct ASRSocket {
+public struct ASRSocket {
     
 }

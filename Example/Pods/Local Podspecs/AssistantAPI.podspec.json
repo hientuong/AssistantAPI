@@ -1,9 +1,9 @@
 {
   "name": "AssistantAPI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of AssistantAPI.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/cong nguyen/AssistantAPI",
+  "homepage": "https://github.com/congnq/AssistantAPI",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,22 @@
     "cong nguyen": "congnq.hp@gmail.com"
   },
   "source": {
-    "git": "https://github.com/cong nguyen/AssistantAPI.git",
-    "tag": "0.1.0"
+    "git": "git@github.com:congnq/AssistantAPI.git",
+    "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "12.0"
   },
-  "source_files": "AssistantAPI/Classes/**/*"
+  "source_files": "AssistantAPI/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+      "5.6.1"
+    ],
+    "RxSwift": [
+      "~> 5.1"
+    ],
+    "RxCocoa": [
+      "~> 5.1"
+    ]
+  }
 }
