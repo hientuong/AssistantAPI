@@ -14,6 +14,6 @@ TODO: Add long description of the pod here.
   s.source_files = 'AssistantAPI/Classes/**/*'
 
   s.dependency 'Alamofire', '5.6.1'
-  s.dependency 'RxSwift', '~> 5.1'
-  s.dependency 'RxCocoa', '~> 6.0'
+  s.dependency 'RxSwift', '~> 6.5.0'
+  s.dependency 'RxCocoa', '~> 6.5.0'
 end
