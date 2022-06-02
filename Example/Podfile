@@ -4,7 +4,7 @@ platform :ios, '12.0'
 
 target 'AssistantAPI_Example' do
   pod 'AssistantAPI', :path => '../'
-
+  pod 'Wormholy'
   target 'AssistantAPI_Tests' do
     inherit! :search_paths
 

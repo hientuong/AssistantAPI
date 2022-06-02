@@ -15,6 +15,15 @@ public class NetworkAdapter {
     public var environment: NetworkEnv!
     var appToken: AppToken?
     
+    var session_id: String? {
+        if let deviceId = appToken?.deviceID {
+            let timeStamp = String(format: "%.0f", NSDate().timeIntervalSince1970.rounded())
+            print("DEBUG: sessionId = \(deviceId)_\(timeStamp)")
+            return "\(deviceId)_\(timeStamp)"
+        }
+        return nil
+    }
+    
     init() {}
     
     public func setupAdapter(environment: NetworkEnv) {

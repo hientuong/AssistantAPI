@@ -10,9 +10,11 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - Wormholy (1.6.5)
 
 DEPENDENCIES:
   - AssistantAPI (from `../`)
+  - Wormholy
 
 SPEC REPOS:
   trunk:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - Wormholy
 
 EXTERNAL SOURCES:
   AssistantAPI:
@@ -31,7 +34,8 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 58a80cd0b41d32de9f377ada95867be5942e3b6b
+PODFILE CHECKSUM: c851bbbb87da0a53b78e8a51fe761310f8c9a60a
 
 COCOAPODS: 1.11.2

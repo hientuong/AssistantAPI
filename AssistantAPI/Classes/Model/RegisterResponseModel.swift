@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 // MARK: - RegisterResponseModel
 public struct RegisterResponseModel: Codable {
     public let message: String

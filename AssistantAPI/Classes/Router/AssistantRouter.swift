@@ -12,6 +12,7 @@ import Alamofire
 enum AssistantRouter: URLRequestConvertible {
     
     case registerDevice(params: [String: Any])
+    case pushMessage(deviceId: String, params: [String: Any])
     
     func asURLRequest() throws -> URLRequest {
         let url = try NetworkAdapter.shared.environment.baseUrl.asURL()
@@ -20,7 +21,9 @@ enum AssistantRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         urlRequest.setValue(Constants.ContentType.json.rawValue, forHTTPHeaderField: Constants.HttpHeaderField.acceptType.rawValue)
         urlRequest.setValue(Constants.ContentType.json.rawValue, forHTTPHeaderField: Constants.HttpHeaderField.contentType.rawValue)
-
+        if let token = NetworkAdapter.shared.appToken?.accessToken {
+            urlRequest.setValue(token, forHTTPHeaderField: Constants.HttpHeaderField.token.rawValue)
+        }
         let encoding: ParameterEncoding = {
             switch method {
             case .get:
@@ -37,6 +40,8 @@ enum AssistantRouter: URLRequestConvertible {
         switch self {
         case .registerDevice:
             return .post
+        case .pushMessage:
+            return .post
         }
     }
     
@@ -44,12 +49,16 @@ enum AssistantRouter: URLRequestConvertible {
         switch self {
         case .registerDevice:
             return "/api/v1/va_gateways/devices/register"
+        case .pushMessage(let deviceId, _):
+            return "/api/v1/va_gateways/nlp_dialog/device/\(deviceId)/messages"
         }
     }
     
     private var parameters: Parameters? {
         switch self {
         case .registerDevice(let params):
+            return params
+        case .pushMessage(_, let params):
             return params
         }
     }

@@ -13,6 +13,7 @@ struct Constants {
         case contentType = "Content-Type"
         case acceptType = "Accept"
         case acceptEncoding = "Accept-Encoding"
+        case token = "token"
     }
     
     //The content type (JSON)
