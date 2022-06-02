@@ -16,7 +16,7 @@ class BaseClient {
                 case .success(let value):
                     single(.success(value))
                 case .failure(let error):
-                    single(.error(error))
+                    single(.failure(error))
                 }
             }
             return Disposables.create {
