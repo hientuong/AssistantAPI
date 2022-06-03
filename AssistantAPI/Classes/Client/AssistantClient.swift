@@ -47,4 +47,9 @@ public struct AssistantClient: AssistantProtocol {
                 return .just(response.messageId ?? "")
             })
     }
+    
+    public static func getVAResponse(by messageId: String) -> Single<VAResponse> {
+        return client.request(AssistantRouter.getVAResponse(messageId: messageId,
+                                                            deviceId: NetworkAdapter.shared.appToken?.deviceID ?? ""))
+    }
 }

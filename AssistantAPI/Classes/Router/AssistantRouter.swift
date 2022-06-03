@@ -13,6 +13,7 @@ enum AssistantRouter: URLRequestConvertible {
     
     case registerDevice(params: [String: Any])
     case pushMessage(deviceId: String, params: [String: Any])
+    case getVAResponse(messageId: String, deviceId: String)
     
     func asURLRequest() throws -> URLRequest {
         let url = try NetworkAdapter.shared.environment.baseUrl.asURL()
@@ -42,6 +43,8 @@ enum AssistantRouter: URLRequestConvertible {
             return .post
         case .pushMessage:
             return .post
+        case .getVAResponse:
+            return .get
         }
     }
     
@@ -51,6 +54,9 @@ enum AssistantRouter: URLRequestConvertible {
             return "/api/v1/va_gateways/devices/register"
         case .pushMessage(let deviceId, _):
             return "/api/v1/va_gateways/nlp_dialog/device/\(deviceId)/messages"
+        case .getVAResponse(let messageId, let deviceId):
+            return "api/v1/va_gateways/nlp_dialog/device/\(deviceId)/messages/\(messageId)/nlp_response"
+            
         }
     }
     
@@ -60,6 +66,8 @@ enum AssistantRouter: URLRequestConvertible {
             return params
         case .pushMessage(_, let params):
             return params
+        case .getVAResponse:
+            return nil
         }
     }
 }

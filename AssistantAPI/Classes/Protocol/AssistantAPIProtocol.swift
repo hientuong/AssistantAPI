@@ -23,4 +23,8 @@ public protocol AssistantProtocol {
      send push message to server to get messageID - using messageID to get VA Response
      */
     static func pushMessage(message: String, vaAgenId: String, nlpFeature: [String]) -> Single<String>
+    /**
+     get VAResponse by messageID
+     */
+    static func getVAResponse(by messageId: String) -> Single<VAResponse>
 }
