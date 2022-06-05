@@ -41,11 +41,16 @@ class ViewController: UIViewController {
         AssistantClient.pushMessage(message: "Tại sao gọi Ocean Park là thành phố 15 phút?",
                                     vaAgenId: "1653292868813182109",
                                     nlpFeature: ["DIALOG"])
-            .delay(.seconds(1), scheduler: MainScheduler.instance)
+            .delay(.microseconds(100), scheduler: MainScheduler.instance)
             .flatMap({ messageId -> Single<VAResponse> in
                 return AssistantClient.getVAResponse(by: messageId)
+            }).flatMap({ response -> Single<VAResponse> in
+                print("DEBUG: getVAResponse by message id ")
+                print(response)
+                return AssistantClient.getVAResponse()
             })
         .subscribe { response in
+            print("DEBUG: getVAResponse by session id ")
             print(response)
         } onFailure: { error in
             print(error)
@@ -56,7 +61,7 @@ class ViewController: UIViewController {
     
     func registerDevice() {
         let regData =  """
-{\"device_code\":\"VINHOMES_OPC_00002\",\"va_release_version_id\":1653911899461852567,\"asr_release_version_id\":1653921035257562939,\"tts_release_version_id\":1653921191625342767,\"va_agent_id\":1653292868813182109,\"device_model\":\"DEFAULT MODEL\",\"device_info\":{\"model\":\"DEFAULT MODEL\",\"manufacture\":\"\",\"vin\":\"VINHOMES_OPC_00001\",\"model_year\":0,\"fuel_capacity\":0,\"variant\":\"\",\"market\":\"\",\"car_type\":\"\",\"sw_version\":\"DEFAULT VERSION\",\"hw_version\":\"\"},\"device_type\":\"VINFAST\",\"device_public_key\":\"1\"}
+{\"device_code\":\"VINHOMES_OPC_00004\",\"va_release_version_id\":1653911899461852567,\"asr_release_version_id\":1653921035257562939,\"tts_release_version_id\":1653921191625342767,\"va_agent_id\":1653292868813182109,\"device_model\":\"DEFAULT MODEL\",\"device_info\":{\"model\":\"DEFAULT MODEL\",\"manufacture\":\"\",\"vin\":\"VINHOMES_OPC_00001\",\"model_year\":0,\"fuel_capacity\":0,\"variant\":\"\",\"market\":\"\",\"car_type\":\"\",\"sw_version\":\"DEFAULT VERSION\",\"hw_version\":\"\"},\"device_type\":\"VINFAST\",\"device_public_key\":\"1\"}
 """
         
         NetworkAdapter.shared.setupAdapter(environment: AppEnvironment())

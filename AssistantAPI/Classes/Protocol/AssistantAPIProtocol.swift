@@ -27,4 +27,9 @@ public protocol AssistantProtocol {
      get VAResponse by messageID
      */
     static func getVAResponse(by messageId: String) -> Single<VAResponse>
+    
+    /**
+     get VAResponse by current sessionId
+     */
+    static func getVAResponse() -> Single<VAResponse>
 }

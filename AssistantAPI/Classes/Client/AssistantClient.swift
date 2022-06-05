@@ -34,16 +34,18 @@ public struct AssistantClient: AssistantProtocol {
     }
     
     public static func pushMessage(message: String, vaAgenId: String, nlpFeature: [String]) -> Single<String> {
+        let sessionId = NetworkAdapter.shared.session_id ?? ""
         let params: [String: Any] = [
             "message": message,
             "va_agent_id": vaAgenId,
-            "session_id": NetworkAdapter.shared.session_id ?? "",
+            "session_id": sessionId,
             "nlp_features": nlpFeature
         ]
         
         return client.request(AssistantRouter.pushMessage(deviceId: NetworkAdapter.shared.appToken?.deviceID ?? "",
                                                           params: params))
             .flatMap({ (response: PushMessageResponse) -> Single<String> in
+                NetworkAdapter.shared.currentSessionId = sessionId
                 return .just(response.messageId ?? "")
             })
     }
@@ -52,4 +54,10 @@ public struct AssistantClient: AssistantProtocol {
         return client.request(AssistantRouter.getVAResponse(messageId: messageId,
                                                             deviceId: NetworkAdapter.shared.appToken?.deviceID ?? ""))
     }
+
+    public static func getVAResponse() -> Single<VAResponse> {
+        return client.request(AssistantRouter.getVaResponseBySession(deviceId: NetworkAdapter.shared.appToken?.deviceID ?? "",
+                                                                     sessionId: NetworkAdapter.shared.currentSessionId ?? ""))
+    }
+    
 }
