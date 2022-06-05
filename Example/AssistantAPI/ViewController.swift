@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         self.pushMessage()
     }
     
+    @IBAction func generateAudioDidTouch() {
+        self.generateAudio()
+    }
+    
     func pushMessage() {
         AssistantClient.pushMessage(message: "Tại sao gọi Ocean Park là thành phố 15 phút?",
                                     vaAgenId: "1653292868813182109",
@@ -74,6 +78,14 @@ class ViewController: UIViewController {
         } onError: { error in
             print("DEBUG: \(error)")
         }.disposed(by: disposeBag)
+    }
+    
+    func generateAudio() {
+        AssistantClient.generateAudio(text: "quanh hồ tây có nhà hàng nào không 1? tôi muốn tìm nhà hàng", languageCode: "vi_vn", voiceName: "female_south2", generator: "melgan", acousticModel: "fastspeech2", style: "news", ouputFormat: "mp3").subscribe(onSuccess: { audioResponse in
+            print("DEBUG: \(audioResponse)")
+        }, onFailure: { error in
+            print("DEBUG: \(error)")
+        }).disposed(by: disposeBag)
     }
     
 }

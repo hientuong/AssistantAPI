@@ -60,4 +60,22 @@ public struct AssistantClient: AssistantProtocol {
                                                                      sessionId: NetworkAdapter.shared.currentSessionId ?? ""))
     }
     
+    public static func generateAudio(text: String,
+                                     languageCode: String,
+                                     voiceName: String,
+                                     generator: String,
+                                     acousticModel: String,
+                                     style: String,
+                                     ouputFormat: String) -> Single<AudioResponse> {
+        let params: [String: Any] = [
+            "text": text,
+            "language_code": languageCode,
+            "voice_name": voiceName,
+            "generator": generator,
+            "acoustic_model": acousticModel,
+            "style": style,
+            "output_format": ouputFormat
+        ]
+        return client.request(AssistantRouter.generateAudio(params: params))
+    }
 }

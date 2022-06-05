@@ -102,6 +102,7 @@
 		484CF003284A4EBC004BB637 /* VAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CF002284A4EBC004BB637 /* VAResponse.swift */; };
 		4879E329670454637856E0C6E7F5F2E8 /* _RXDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 166820C52F80885CF8E801B3B3013B45 /* _RXDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4883983C74EC12BFF00FFBC41241DDB4 /* KVORepresentable+CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D5B9557CF7A66762EFD9128D62175 /* KVORepresentable+CoreGraphics.swift */; };
+		48C5CDBE284CF39E00CDF890 /* AudioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C5CDBD284CF39E00CDF890 /* AudioResponse.swift */; };
 		4909ACA7233C6F207DD214DCCDC0E37F /* DispatchQueueConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6FCCE09D15188F4C6307A2346E0715 /* DispatchQueueConfiguration.swift */; };
 		49E12749EC152BDE9E464D6CC83682DF /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80147BEFC88075C632EA1FC3B1CEFB87 /* Lock.swift */; };
 		4A3D89EF785B0AC256AFD57613D15DA9 /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F2F85173E6B39FBC6E463B130767A /* SubscribeOn.swift */; };
@@ -630,6 +631,7 @@
 		484CF000284A4D7F004BB637 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		484CF002284A4EBC004BB637 /* VAResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAResponse.swift; sourceTree = "<group>"; };
 		489DFAF4D45EB23BE0E804023DE0ED81 /* Wormholy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Wormholy.modulemap; sourceTree = "<group>"; };
+		48C5CDBD284CF39E00CDF890 /* AudioResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioResponse.swift; sourceTree = "<group>"; };
 		48DFD27D9C73815977AA0F5BE6ED57D0 /* Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = RxSwift/Observable.swift; sourceTree = "<group>"; };
 		491E3D8D608FEAC34015A4ABAC7CAB32 /* RxRelay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxRelay-dummy.m"; sourceTree = "<group>"; };
 		49301DF1D66B19C4CC43B3643F194D6D /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = RxSwift/Observables/Range.swift; sourceTree = "<group>"; };
@@ -1322,6 +1324,7 @@
 				C2605F567FE556892DEC8890587C1F62 /* RegistrationDataModel.swift */,
 				484CF000284A4D7F004BB637 /* AnyCodable.swift */,
 				484CF002284A4EBC004BB637 /* VAResponse.swift */,
+				48C5CDBD284CF39E00CDF890 /* AudioResponse.swift */,
 			);
 			name = Model;
 			path = AssistantAPI/Classes/Model;
@@ -2449,6 +2452,7 @@
 				0557E4F975CDDED4315A50E2814135A5 /* NetworkAdapter.swift in Sources */,
 				0AAA5353AB76506814F8B578F2A550FE /* PushMessageResponse.swift in Sources */,
 				0EB1F340CBB54A5C8535EFF1713462AA /* RegisterResponseModel.swift in Sources */,
+				48C5CDBE284CF39E00CDF890 /* AudioResponse.swift in Sources */,
 				484CF003284A4EBC004BB637 /* VAResponse.swift in Sources */,
 				55D1490313A44F6065E08A6FB9107103 /* RegistrationDataModel.swift in Sources */,
 			);

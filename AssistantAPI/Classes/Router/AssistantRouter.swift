@@ -15,6 +15,7 @@ enum AssistantRouter: URLRequestConvertible {
     case pushMessage(deviceId: String, params: [String: Any])
     case getVAResponse(messageId: String, deviceId: String)
     case getVaResponseBySession(deviceId: String, sessionId: String)
+    case generateAudio(params: [String: Any])
     
     func asURLRequest() throws -> URLRequest {
         let url = try NetworkAdapter.shared.environment.baseUrl.asURL()
@@ -46,6 +47,8 @@ enum AssistantRouter: URLRequestConvertible {
             return .post
         case .getVAResponse, .getVaResponseBySession:
             return .get
+        case .generateAudio:
+            return .post
         }
     }
     
@@ -59,6 +62,8 @@ enum AssistantRouter: URLRequestConvertible {
             return "api/v1/va_gateways/nlp_dialog/device/\(deviceId)/messages/\(messageId)/nlp_response"
         case .getVaResponseBySession(let deviceId, let sessionId):
             return "/api/v1/va_gateways/nlp_dialog/device/\(deviceId)/sessions/\(sessionId)/nlp_response"
+        case .generateAudio:
+            return "api/v1/tts/synthesis/"
         }
     }
     
@@ -70,6 +75,8 @@ enum AssistantRouter: URLRequestConvertible {
             return params
         case .getVAResponse, .getVaResponseBySession:
             return nil
+        case .generateAudio(let params):
+            return params
         }
     }
 }
