@@ -42,20 +42,20 @@ class ViewController: UIViewController {
     }
     
     func pushMessage() {
-        AssistantClient.pushMessage(message: "Tại sao gọi Ocean Park là thành phố 15 phút?",
+        AssistantClient.pushMessage(message: "Cho tôi hỏi Ocean Park rộng bao nhiêu ha?",
                                     vaAgenId: "1653292868813182109",
                                     nlpFeature: ["DIALOG"])
-            .delay(.microseconds(100), scheduler: MainScheduler.instance)
+            .delay(.seconds(2), scheduler: MainScheduler.instance)
             .flatMap({ messageId -> Single<VAResponse> in
                 return AssistantClient.getVAResponse(by: messageId)
-            }).flatMap({ response -> Single<VAResponse> in
-                print("DEBUG: getVAResponse by message id ")
-                print(response)
-                return AssistantClient.getVAResponse()
-            })
-        .subscribe { response in
+            }).subscribe { response in
             print("DEBUG: getVAResponse by session id ")
             print(response)
+                for item in response.vaData?.dmResponse?.botMessage ?? [] {
+                    print("DEBUG: type \(item.type)")
+                    print("DEBUG: value \(item.getBotMessageValueObject())")
+                }
+                
         } onFailure: { error in
             print(error)
         }.disposed(by: disposeBag)

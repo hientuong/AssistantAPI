@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AssistantAPI'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A short description of AssistantAPI.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
@@ -16,4 +16,5 @@ TODO: Add long description of the pod here.
   s.dependency 'Alamofire', '5.6.1'
   s.dependency 'RxSwift', '~> 6.5.0'
   s.dependency 'RxCocoa', '~> 6.5.0'
+  s.dependency 'ObjectMapper', '~> 4.2.0'
 end

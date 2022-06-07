@@ -1,9 +1,11 @@
 PODS:
   - Alamofire (5.6.1)
-  - AssistantAPI (0.1.2):
+  - AssistantAPI (0.1.4):
     - Alamofire (= 5.6.1)
+    - ObjectMapper
     - RxCocoa (~> 6.5.0)
     - RxSwift (~> 6.5.0)
+  - ObjectMapper (4.2.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ObjectMapper
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -30,7 +33,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
-  AssistantAPI: f3df825e24ce7e250ac1aecf8054bc22b379a859
+  AssistantAPI: 3364ea1536abc27b65b7d0c39bb89f7e91e18aba
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
